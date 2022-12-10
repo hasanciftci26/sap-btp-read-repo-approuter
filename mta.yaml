@@ -1,0 +1,18 @@
+_schema-version: "3.2"
+ID: ui-read-approuter
+version: 0.0.1
+modules:
+- name: ui-read-approuter-approuter
+  type: approuter.nodejs
+  path: ui-read-approuter-approuter
+  requires:
+  - name: ui-app-repo-runtime
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+resources:
+  - name: ui-app-repo-runtime
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-runtime
